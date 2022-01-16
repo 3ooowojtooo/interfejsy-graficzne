@@ -1,8 +1,0 @@
-C:\Users\Quary\OneDrive\Pulpit\studia\Interfejsy\interfejsy-graficzne\katalog-miejsc-turystycznych\core\bin\Release\netstandard2.0\core.deps.json
-C:\Users\Quary\OneDrive\Pulpit\studia\Interfejsy\interfejsy-graficzne\katalog-miejsc-turystycznych\core\bin\Release\netstandard2.0\core.dll
-C:\Users\Quary\OneDrive\Pulpit\studia\Interfejsy\interfejsy-graficzne\katalog-miejsc-turystycznych\core\bin\Release\netstandard2.0\core.pdb
-C:\Users\Quary\OneDrive\Pulpit\studia\Interfejsy\interfejsy-graficzne\katalog-miejsc-turystycznych\core\obj\Release\netstandard2.0\core.csproj.CoreCompileInputs.cache
-C:\Users\Quary\OneDrive\Pulpit\studia\Interfejsy\interfejsy-graficzne\katalog-miejsc-turystycznych\core\obj\Release\netstandard2.0\core.AssemblyInfoInputs.cache
-C:\Users\Quary\OneDrive\Pulpit\studia\Interfejsy\interfejsy-graficzne\katalog-miejsc-turystycznych\core\obj\Release\netstandard2.0\core.AssemblyInfo.cs
-C:\Users\Quary\OneDrive\Pulpit\studia\Interfejsy\interfejsy-graficzne\katalog-miejsc-turystycznych\core\obj\Release\netstandard2.0\core.dll
-C:\Users\Quary\OneDrive\Pulpit\studia\Interfejsy\interfejsy-graficzne\katalog-miejsc-turystycznych\core\obj\Release\netstandard2.0\core.pdb
