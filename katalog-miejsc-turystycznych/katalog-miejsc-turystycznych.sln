@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.28307.1738
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "katalog-miejsc-turystycznych", "katalog-miejsc-turystycznych\katalog-miejsc-turystycznych.csproj", "{CBBCCFB1-2905-40AD-9CA4-4FF9E79E5950}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core", "core\core.csproj", "{EC002011-AED9-454B-99DF-ED0E3C998E12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "core", "core\core.csproj", "{EC002011-AED9-454B-99DF-ED0E3C998E12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{D9BE31FD-D6AF-4A3F-8B0C-642621E89DE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{1FDC009A-2355-43F0-9521-505C8FB0B6D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{EC002011-AED9-454B-99DF-ED0E3C998E12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC002011-AED9-454B-99DF-ED0E3C998E12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC002011-AED9-454B-99DF-ED0E3C998E12}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D9BE31FD-D6AF-4A3F-8B0C-642621E89DE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9BE31FD-D6AF-4A3F-8B0C-642621E89DE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9BE31FD-D6AF-4A3F-8B0C-642621E89DE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9BE31FD-D6AF-4A3F-8B0C-642621E89DE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FDC009A-2355-43F0-9521-505C8FB0B6D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FDC009A-2355-43F0-9521-505C8FB0B6D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FDC009A-2355-43F0-9521-505C8FB0B6D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FDC009A-2355-43F0-9521-505C8FB0B6D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

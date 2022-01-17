@@ -2,15 +2,15 @@
 
 namespace core
 {
-    internal class FileHandlerImpl : FileHandler
+    public class FileHandlerImpl : FileHandler
     {
-        string FileHandler.ReadFile(string filename)
+        public string ReadFile(string filename)
         {
             string path = BuildFullPath(filename);
             return File.ReadAllText(path);
         }
 
-        void FileHandler.WriteToFile(string filename, string content)
+        public void WriteToFile(string filename, string content)
         {
             string path = BuildFullPath(filename);
             File.WriteAllText(path, content);

@@ -1,18 +1,18 @@
 ﻿using System.Collections.Generic;
-using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace core
 { 
-    internal sealed class JsonHandlerImpl : JsonHandler
+    public sealed class JsonHandlerImpl : JsonHandler
     {
-        string JsonHandler.Serialize(List<PlaceEntry> places)
+        public string Serialize(List<Place> places)
         {
-            return JsonSerializer.Serialize(places);
+            return JsonConvert.SerializeObject(Mapper.Map(places));
         }
 
-        List<PlaceEntry> JsonHandler.Deserialize(string json)
+        public List<Place> Deserialize(string json)
         {
-            return JsonSerializer.Deserialize<List<PlaceEntry>>(json);
+            return Mapper.Map(JsonConvert.DeserializeObject<List<PlaceEntry>>(json));
         }
     }
 }

@@ -40,6 +40,12 @@ namespace core
             return Places[id];
         }
 
+        public void Update(Place place)
+        {
+            Places[place.Id] = place;
+            WritePlacesToFile();
+        }
+
         public void AddPlace(string name, string description, List<double> reviews, string localization, List<InterestingPlace> interestingPlaces)
         {
             Place newPlace = new Place(Places.Count, name, description, reviews, localization, interestingPlaces);
@@ -56,13 +62,13 @@ namespace core
         private void LoadPlacesFromFile()
         {
             string dataFileContent = FileHandler.ReadFile(DATA_FILENAME);
-            List<PlaceEntry> places = JsonHandler.Deserialize(dataFileContent);
-            Places = Mapper.Map(places);
+            List<Place> places = JsonHandler.Deserialize(dataFileContent);
+            Places = places;
         }
 
         private void WritePlacesToFile()
         {
-            string placesJson = JsonHandler.Serialize(Mapper.Map(Places));
+            string placesJson = JsonHandler.Serialize(Places);
             FileHandler.WriteToFile(DATA_FILENAME, placesJson);
         }
     }

@@ -4,11 +4,11 @@ namespace core
 {
     public class InterestingPlace
     {
-        public String Name { get; }
-        public String Localization { get; }
-        public String Description { get; }
+        public string Name { get; }
+        public string Localization { get; }
+        public string Description { get; }
 
-        public InterestingPlace(String name, String localization, String description)
+        public InterestingPlace(string name, string localization, string description)
         {
             this.Name = name;
             this.Localization = localization;
