@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.Json.Serialization;
 
 namespace core
 {
@@ -9,7 +8,6 @@ namespace core
         public String Localization { get; }
         public String Description { get; }
 
-        [JsonConstructorAttribute]
         public InterestingPlaceEntry(String name, String localization, String description)
         {
             this.Name = name;

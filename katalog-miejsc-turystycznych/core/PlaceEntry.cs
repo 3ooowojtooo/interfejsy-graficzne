@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json.Serialization;
 
 namespace core
 {
@@ -12,7 +11,6 @@ namespace core
         public String Localization { get; }
         public List<InterestingPlaceEntry> InterestingPlaces { get; }
 
-        [JsonConstructorAttribute]
         public PlaceEntry(String name, String description, List<Double> reviews, String localization, List<InterestingPlaceEntry> interestingPlaces)
         {
             this.Name = name;

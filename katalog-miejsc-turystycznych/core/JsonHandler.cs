@@ -4,10 +4,10 @@ using System.Text;
 
 namespace core
 {
-    internal interface JsonHandler
+    public interface JsonHandler
     {
-        string Serialize(List<PlaceEntry> places);
+        string Serialize(List<Place> places);
 
-        List<PlaceEntry> Deserialize(string json); 
+        List<Place> Deserialize(string json); 
     }
 }

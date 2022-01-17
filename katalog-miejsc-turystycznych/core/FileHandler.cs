@@ -4,7 +4,7 @@ using System.Text;
 
 namespace core
 {
-    internal interface FileHandler
+    public interface FileHandler
     {
         string ReadFile(string filename);
 
