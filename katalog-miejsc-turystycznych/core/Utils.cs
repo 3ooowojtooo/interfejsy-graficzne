@@ -8,6 +8,10 @@ namespace core
     {
         internal static double computeMean(List<Double> values)
         {
+            if (values.Count == 0)
+            {
+                return 0;
+            }
             double sum = 0;
             foreach (var val in values)
             {

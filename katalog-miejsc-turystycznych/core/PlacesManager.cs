@@ -28,7 +28,7 @@ namespace core
             LoadPlacesFromFile();
         }
 
-        internal PlacesManager(JsonHandler jsonHandler, FileHandler fileHandler)
+        public PlacesManager(JsonHandler jsonHandler, FileHandler fileHandler)
         {
             JsonHandler = jsonHandler;
             FileHandler = fileHandler;
