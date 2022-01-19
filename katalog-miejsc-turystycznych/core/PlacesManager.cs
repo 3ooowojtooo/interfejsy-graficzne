@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.Specialized;
 
 namespace core
 {
@@ -8,7 +9,8 @@ namespace core
         private readonly static string DATA_FILENAME = @"Data/data.json";
         private static PlacesManager Instance;
 
-        public List<Place> Places { get; private set; }
+        private OrderedDictionary Places = new OrderedDictionary();
+        private int MaxPlaceIdentifier = 0;
         private readonly JsonHandler JsonHandler;
         private readonly FileHandler FileHandler;
 
@@ -28,47 +30,73 @@ namespace core
             LoadPlacesFromFile();
         }
 
-        internal PlacesManager(JsonHandler jsonHandler, FileHandler fileHandler)
+        public PlacesManager(JsonHandler jsonHandler, FileHandler fileHandler)
         {
             JsonHandler = jsonHandler;
             FileHandler = fileHandler;
             LoadPlacesFromFile();
         }
 
+        public List<Place> GetPlaces()
+        {
+            return BuildListOfPlaces();
+        }
+
+        private List<Place> BuildListOfPlaces()
+        {
+            List<Place> result = new List<Place>();
+            foreach (var place in Places.Values)
+            {
+                result.Add(place as Place);
+            }
+            return result;
+        }
+
         public Place GetPlace(int id)
         {
-            return Places[id];
+            return Places[id] as Place;
         }
 
         public void Update(Place place)
         {
-            Places[place.Id] = place;
-            WritePlacesToFile();
+            if (Places.Contains(place.Id))
+            {
+                Places[place.Id] = place;
+                WritePlacesToFile();
+            }
         }
 
         public void AddPlace(string name, string description, List<double> reviews, string localization, List<InterestingPlace> interestingPlaces)
         {
-            Place newPlace = new Place(Places.Count, name, description, reviews, localization, interestingPlaces);
-            Places.Add(newPlace);
+            MaxPlaceIdentifier += 1;
+            Place newPlace = new Place(MaxPlaceIdentifier, name, description, reviews, localization, interestingPlaces);
+            Places.Add(MaxPlaceIdentifier, newPlace);
             WritePlacesToFile();
         }
 
         public void DeletePlace(int id)
         {
-            Places.RemoveAt(id);
-            WritePlacesToFile();
+            if (Places.Contains(id))
+            {
+                Places.Remove(id);
+                WritePlacesToFile();
+            }
         }
 
         private void LoadPlacesFromFile()
         {
             string dataFileContent = FileHandler.ReadFile(DATA_FILENAME);
             List<Place> places = JsonHandler.Deserialize(dataFileContent);
-            Places = places;
+            foreach (var place in places)
+            {
+                Places.Add(place.Id, place);
+            }
+            MaxPlaceIdentifier = places.Count - 1;
         }
 
         private void WritePlacesToFile()
         {
-            string placesJson = JsonHandler.Serialize(Places);
+            string placesJson = JsonHandler.Serialize(GetPlaces());
             FileHandler.WriteToFile(DATA_FILENAME, placesJson);
         }
     }
