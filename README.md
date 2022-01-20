@@ -11,7 +11,7 @@
 
 - model wpisu (nazwa, gwiazdki itd.) - Wojtek
 - klasa do obsługi pliku z danymi (mapowanie JSON <-> C# object) - zapis i odczyt + TESTY - Wojtek
-- okienko z listą - Mateusz
+- okienko z listą - Mateusz done
 - okienko z detalami - Ola
 - okienko z dodawaniem obiektu - Ola
 - dokumentacja - Mateusz
