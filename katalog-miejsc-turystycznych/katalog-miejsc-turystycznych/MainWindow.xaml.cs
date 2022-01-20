@@ -20,9 +20,32 @@ namespace katalog_miejsc_turystycznych
     /// </summary>
     public partial class MainWindow : Window
     {
+        AddNewPlace addNewPlace;
+        PlaceInformation placeInformation;
         public MainWindow()
         {
             InitializeComponent();
+            core.PlacesManager places = core.PlacesManager.GetInstance();
+            listView1.ItemsSource = places.GetPlaces();
+        }
+
+        private void listView1_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            var item = (sender as ListView).SelectedItem;
+            var elem = item as core.Place;
+            Console.WriteLine(elem);
+            if (elem != null)
+            {
+                placeInformation = new PlaceInformation();
+                placeInformation.setText(elem.Name);
+                placeInformation.Show();
+            }
+
+        }
+        private void AddPlace_Click(object sender, RoutedEventArgs e)
+        {
+            addNewPlace = new AddNewPlace();
+            addNewPlace.Show();
         }
     }
 }
