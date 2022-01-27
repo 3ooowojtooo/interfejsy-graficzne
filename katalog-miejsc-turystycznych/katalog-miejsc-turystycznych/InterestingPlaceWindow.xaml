@@ -1,0 +1,52 @@
+﻿<Window x:Class="katalog_miejsc_turystycznych.InterestingPlaceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:katalog_miejsc_turystycznych"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Interesting place" Height="450" Width="400" Background="#FF282934">
+    
+    <Window.Resources>
+        <LinearGradientBrush x:Key="ButtonAnimation"  
+                            StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="DarkGray" Offset="0"/>
+        </LinearGradientBrush>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{StaticResource ButtonAnimation}"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="button" CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="#FF282934">
+                            <TextBlock  Text="{TemplateBinding Button.Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <DataTemplate x:Key="HeaderStyle">
+            <StackPanel Orientation="Horizontal" Margin="-5,-5,-5,-5" Width="200">
+                <StackPanel.Background >
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF363A47" Offset="1"/>
+                        <GradientStop Color="#FF525B64" Offset="0.5"/>
+                        <GradientStop Color="#FF0E1113" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <TextBlock Margin="10,10,10,10" Text="{Binding}" VerticalAlignment="Center"  Foreground="White"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid Margin="0,0,-0.4,4.8">
+        <TextBlock x:Name="PlaceNameTextBlock" TextWrapping="Wrap" FontSize="22" Text="PlaceName" FontFamily="Segoe UI Black" Width="Auto" Height="Auto" Cursor="None" FrameworkElement.FlowDirection="RightToLeft" HorizontalAlignment="Left" TextAlignment="Right" Foreground="White" Margin="20,20,0,357.2" />
+        <TextBlock x:Name="PlaceLocalizationTextBlock" TextWrapping="Wrap" FontSize="18" Text="PlaceAddress" FontFamily="Segoe UI Black" FontWeight="Light" Width="Auto" Height="Auto" Cursor="None" FrameworkElement.FlowDirection="RightToLeft" HorizontalAlignment="Left" TextAlignment="Right" Foreground="White" Margin="20,63,0,308.2" RenderTransformOrigin="0.421,-1.055" />
+        <Label Foreground="White" FontSize="18" FontWeight="Bold" Width="Auto" Height="Auto" Margin="20,173,184.8,298">Description:</Label>
+        <TextBox x:Name="PlaceDescriptionTextBox" FontSize="18" Height="185" TextWrapping="Wrap" Text="PlaceDescription" VerticalAlignment="Top" Background="#FF282934" Foreground="White" Margin="20,112,33,0"/>
+        <Button x:Name="CloseWindow" Click="Close_Click" FontSize="18" Content="Close" Height="50" Width="100" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="142,0,0,35.2" AutomationProperties.IsOffscreenBehavior="Onscreen" Foreground="White" FontWeight="Bold"/>
+    </Grid>
+</Window>

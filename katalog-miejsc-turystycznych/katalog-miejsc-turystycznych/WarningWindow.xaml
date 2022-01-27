@@ -1,0 +1,49 @@
+﻿<Window x:Class="katalog_miejsc_turystycznych.WarningWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:katalog_miejsc_turystycznych"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="Warning" Height="194.19" Width="323.859" Background="#FF282934">
+
+    <Window.Resources>
+        <LinearGradientBrush x:Key="ButtonAnimation"  
+                            StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="DarkGray" Offset="0"/>
+        </LinearGradientBrush>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{StaticResource ButtonAnimation}"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="button" CornerRadius="5" BorderBrush="Black" BorderThickness="1" Background="#FF282934">
+                            <TextBlock  Text="{TemplateBinding Button.Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <DataTemplate x:Key="HeaderStyle">
+            <StackPanel Orientation="Horizontal" Margin="-5,-5,-5,-5" Width="200">
+                <StackPanel.Background >
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF363A47" Offset="1"/>
+                        <GradientStop Color="#FF525B64" Offset="0.5"/>
+                        <GradientStop Color="#FF0E1113" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </StackPanel.Background>
+                <TextBlock Margin="10,10,10,10" Text="{Binding}" VerticalAlignment="Center"  Foreground="White"/>
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Grid Margin="0,0,3,8.4">
+        <TextBlock x:Name="Warning" TextWrapping="Wrap" FontSize="16" Text="Please fill all fields" FontFamily="Segoe UI Black" Width="171" Cursor="None" FrameworkElement.FlowDirection="RightToLeft" HorizontalAlignment="Left" TextAlignment="Right" Foreground="White" Margin="83,48,0,81.4" RenderTransformOrigin="0.439,0.438" />
+        <Button x:Name="OK" Click="OK_Click" FontSize="16" Content="OK" Height="37" Width="Auto" VerticalAlignment="Bottom" Margin="137,0,131.6,34.4" AutomationProperties.IsOffscreenBehavior="Onscreen" Foreground="White" FontWeight="Bold" RenderTransformOrigin="2.763,3.732"/>
+    </Grid>
+</Window>
