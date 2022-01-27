@@ -20,14 +20,15 @@ namespace katalog_miejsc_turystycznych
     /// </summary>
     public partial class PlaceInformation : Window
     {
-        Place place;
-        InterestingPlaceWindow interestingPlace;
-        double review;
+        private Place place;
+        private PlacesManager placesManager;
+        private double review;
 
         public PlaceInformation(Place place)
         {
             InitializeComponent();
             this.place = place;
+            placesManager = PlacesManager.GetInstance(); 
             InterestingPlacesListView.ItemsSource = place.InterestingPlaces;
             PlaceNameTextBlock.Text = place.Name;
             PlaceRatingTextBlock.Text = CreateRevies(place.ReviewsMean, place.Reviews.Count);
@@ -48,16 +49,27 @@ namespace katalog_miejsc_turystycznych
             Console.WriteLine(elem);
             if (elem != null)
             {
-                interestingPlace = new InterestingPlaceWindow(elem);
+                InterestingPlaceWindow interestingPlace = new InterestingPlaceWindow(elem);
                 interestingPlace.Show();
             }
         }
 
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            DeleteWindow deleteWindow = new DeleteWindow(this);
+            deleteWindow.Show();
+            placesManager.DeletePlace(place.Id);
+        }
+
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-            PlacesManager placesManager = PlacesManager.GetInstance();
-            place.AddReview(review);
-            placesManager.Update(place);
+            MainWindow mainWindow = new MainWindow();
+            if (review != 0)
+            {
+                place.AddReview(review);
+                placesManager.Update(place);
+            }
+            mainWindow.Show();
             Close();
         }
 

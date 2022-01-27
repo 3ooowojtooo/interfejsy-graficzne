@@ -69,7 +69,8 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Button x:Name="CloseWindow" Click="Close_Click" FontSize="18" Content="Close" Height="43" Width="86" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="166,0,0,18.8" AutomationProperties.IsOffscreenBehavior="Onscreen" Foreground="White" FontWeight="Bold"/>
+            <Button x:Name="Delete" Click="Delete_Click" FontSize="18" Content="Delete" Height="43" Width="86" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="41,0,0,9.8" AutomationProperties.IsOffscreenBehavior="Onscreen" Foreground="White" FontWeight="Bold"/>
+            <Button x:Name="CloseWindow" Click="Close_Click" FontSize="18" Content="Close" Height="43" Width="86" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="166,0,0,9.8" AutomationProperties.IsOffscreenBehavior="Onscreen" Foreground="White" FontWeight="Bold"/>
         </Grid>
     </Grid>
 </Window>

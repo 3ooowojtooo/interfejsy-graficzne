@@ -20,8 +20,6 @@ namespace katalog_miejsc_turystycznych
     /// </summary>
     public partial class MainWindow : Window
     {
-        AddNewPlace1 addNewPlace1;
-        PlaceInformation placeInformation;
         public MainWindow()
         {
             InitializeComponent();
@@ -36,15 +34,15 @@ namespace katalog_miejsc_turystycznych
             Console.WriteLine(elem);
             if (elem != null)
             {
-                placeInformation = new PlaceInformation(elem);
-                //placeInformation.setText(elem.Name);
+                PlaceInformation placeInformation = new PlaceInformation(elem);
                 placeInformation.Show();
+                Close();
             }
 
         }
         private void AddPlace_Click(object sender, RoutedEventArgs e)
         {
-            addNewPlace1 = new AddNewPlace1(new PlaceTemp());
+            AddNewPlace1 addNewPlace1 = new AddNewPlace1(new PlaceTemp());
             addNewPlace1.Show();
             Close();
         }

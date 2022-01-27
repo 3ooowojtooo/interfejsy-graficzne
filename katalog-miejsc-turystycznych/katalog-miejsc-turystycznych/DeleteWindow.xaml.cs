@@ -15,23 +15,23 @@ using System.Windows.Shapes;
 namespace katalog_miejsc_turystycznych
 {
     /// <summary>
-    /// Interaction logic for CancelWindow.xaml
+    /// Interaction logic for DeleteWindow.xaml
     /// </summary>
-    public partial class CancelWindow : Window
+    public partial class DeleteWindow : Window
     {
-        Window window;
+        PlaceInformation placeInformation;
 
-        public CancelWindow(Window window)
+        public DeleteWindow(PlaceInformation placeInformation)
         {
             InitializeComponent();
-            this.window = window;
+            this.placeInformation = placeInformation;
         }
 
         private void YES_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
+            placeInformation.Close();
             mainWindow.Show();
-            window.Close();
             Close();
         }
 

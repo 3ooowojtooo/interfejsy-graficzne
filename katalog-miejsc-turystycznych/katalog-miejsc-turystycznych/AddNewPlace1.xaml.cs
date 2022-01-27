@@ -19,10 +19,7 @@ namespace katalog_miejsc_turystycznych
     /// </summary>
     public partial class AddNewPlace1 : Window
     {
-        AddNewPlace2 addNewPlace2;
-        WarningWindow warning;
-        CancelWindow cancel;
-        PlaceTemp placeTemp;
+        private PlaceTemp placeTemp;
 
         public AddNewPlace1(PlaceTemp placeTemp)
         {
@@ -35,13 +32,13 @@ namespace katalog_miejsc_turystycznych
         {
             if(NameTextBox.Text == "" || StreetTextBox.Text == "" || CityTextBox.Text == "" || CountryTextBox.Text == "")
             {
-                warning = new WarningWindow();
+                WarningWindow warning = new WarningWindow();
                 warning.Show();
             }
             else
             {
                 UpdatePlaceData();
-                addNewPlace2 = new AddNewPlace2(placeTemp);
+                AddNewPlace2 addNewPlace2 = new AddNewPlace2(placeTemp);
                 addNewPlace2.Show();
                 Close();
             }
@@ -50,7 +47,7 @@ namespace katalog_miejsc_turystycznych
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            cancel = new CancelWindow(this);
+            CancelWindow cancel = new CancelWindow(this);
             cancel.Show();
         }
 
